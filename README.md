@@ -1,16 +1,46 @@
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:123B59,50:087E8B,100:6750A4&amp;height=180&amp;section=header" width="100%" alt="" />
+
 # AI Supplier Guardian
 
-Portfolio edition by Srushti Raj Beerelli.
+**Supplier email risk assessment · Portfolio edition by Srushti Raj Beerelli**
 
-AI Supplier Guardian helps buyers review delivery delays and price changes in supplier emails. This repository contains the React dashboard and Supabase schema. The email workflow runs separately in n8n.
+![n8n](https://img.shields.io/badge/Automation-n8n-EA4B71?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/Risk%20analysis-Gemini-6750A4?style=for-the-badge)
+![Supabase](https://img.shields.io/badge/Database-Supabase-087E68?style=for-the-badge)
+![React](https://img.shields.io/badge/Dashboard-React-166C9E?style=for-the-badge)
 
-## Verified workflow test
+[Explore my portfolio](https://srushti-analytics-portfolio.thoughtfulturnip.chatgpt.site) · [See the workflow](docs/README.md)
 
-A sample Gmail message for PO-4421 reported a 30-day delivery delay and a price increase from $4,200 to $4,500. The n8n workflow retrieved the message, used Gemini to extract the order details and assess the risk, then parsed the result. Gemini rated it **High** and recommended contacting the supplier and evaluating backups.
+</div>
 
-I configured Supabase and tested the Gmail-to-Gemini workflow. The automatic write from n8n to the dashboard is pending.
+---
 
-## Run locally
+## 🚦 Verified risk assessment
+
+> **PO-4421 · Steel Masters Ltd.**  
+> A sample supplier email reported a delay and a price increase for 500 steel rods.
+
+| Gemini risk level | Delivery delay | Price increase | Model confidence |
+| :---: | :---: | :---: | :---: |
+| 🔴 **High** | **30 days** | **7.1%** · $4,200 to $4,500 | **0.90** |
+
+**Recommended action:** Contact the supplier about the changes and evaluate backup suppliers.
+
+## ⚙️ How it works
+
+```mermaid
+flowchart LR
+    A["Gmail receives email"] --> B["n8n retrieves message"]
+    B --> C["Gemini extracts order details"]
+    C --> D["Gemini assesses risk"]
+    D --> E["n8n parses result"]
+```
+
+I configured Supabase and tested the Gmail-to-Gemini workflow. This repository contains the React dashboard and Supabase schema. The automatic write from n8n to the dashboard is pending.
+
+## 🛠️ Run locally
 
 1. Clone `https://github.com/Srushti99-ux/AI-Supplier-Guardian.git` and run `npm ci` in the repository.
 2. Copy `.env.example` to `.env`. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to your project's URL and publishable or legacy anon key.
