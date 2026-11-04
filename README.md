@@ -40,6 +40,89 @@ flowchart LR
 
 I configured Supabase and tested the Gmail-to-Gemini workflow. This repository contains the React dashboard and Supabase schema. The automatic write from n8n to the dashboard is pending.
 
+## 📸 Demo walkthrough
+
+<details>
+<summary>01 · Sample supplier email</summary>
+
+![01 · Sample supplier email](docs/demo/email.webp)
+
+The demo supplier reports a 30-day delay and raises the order total from $4,200 to $4,500.
+
+</details>
+
+<details>
+<summary>02 · n8n execution</summary>
+
+![02 · n8n execution](docs/demo/workflow.webp)
+
+Gmail intake, Gemini extraction and risk scoring, and JSON parsing. The database write was disabled during the test.
+
+</details>
+
+<details open>
+<summary>03 · Gemini output</summary>
+
+![03 · Gemini output](docs/demo/result.webp)
+
+The parsed result shows High risk, a recommendation, and a model confidence score of 0.90.
+
+</details>
+
+<details>
+<summary>04 · Dashboard review</summary>
+
+![04 · Dashboard review](docs/demo/manual.webp)
+
+The Gemini result was manually loaded into the dashboard for this demo.
+
+</details>
+
+<details>
+<summary>Overview</summary>
+
+![Overview](docs/demo/overview.webp)
+
+Sample delivery and alert cards. The 67% figure represents two of three pending orders that were not overdue.
+
+</details>
+
+<details>
+<summary>Risk analysis</summary>
+
+![Risk analysis](docs/demo/risks.webp)
+
+Sample High, Medium, and Low risk cases with recommendations for review.
+
+</details>
+
+<details>
+<summary>Inventory</summary>
+
+![Inventory](docs/demo/inventory.webp)
+
+Steel rods are flagged as low stock, with two days of estimated coverage.
+
+</details>
+
+<details>
+<summary>Orders</summary>
+
+![Orders](docs/demo/orders.webp)
+
+Three sample pending orders, including overdue steel rods.
+
+</details>
+
+<details>
+<summary>Suppliers</summary>
+
+![Suppliers](docs/demo/suppliers.webp)
+
+The sample Steel Masters Ltd. supplier record.
+
+</details>
+
 ## 🛠️ Run locally
 
 1. Clone `https://github.com/Srushti99-ux/AI-Supplier-Guardian.git` and run `npm ci` in the repository.
